@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Lake House | Vacation Rental</title>
+  <meta name="description" content="A quiet, sunlit retreat that sleeps eight. Reserve your stay.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#1E2B2F',      // deep slate-green for text and dark sections
+            mist: '#F5F6F3',     // page background
+            stone: '#E4E7E1',    // borders, quiet fills
+            lake: '#2F6272',     // primary accent / buttons
+            lakedark: '#234B58', // button hover
+          },
+          fontFamily: {
+            serif: ['Newsreader', 'Georgia', 'serif'],
+            sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    .ph { background: linear-gradient(135deg, #cfd6d2, #aebbb8); } /* shows until you add real photos */
+    .ph img { color: transparent; }
+    :focus-visible { outline: 2px solid #2F6272; outline-offset: 3px; }
+  </style>
+</head>
+
+<body class="bg-mist font-sans text-ink antialiased">
+
+  <!-- Header -->
+  <header class="fixed inset-x-0 top-0 z-30 border-b border-white/20 bg-ink/40 backdrop-blur-md">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <a href="#top" class="font-serif text-xl text-white">The Lake House</a>
+      <nav class="hidden items-center gap-8 text-sm text-white/90 md:flex">
+        <a href="#gallery" class="hover:text-white">Photos</a>
+        <a href="#about" class="hover:text-white">The house</a>
+        <a href="#amenities" class="hover:text-white">Amenities</a>
+        <a href="#reserve" class="rounded-full bg-white px-5 py-2 font-medium text-ink transition hover:bg-stone">Reserve</a>
+      </nav>
+      <a href="#reserve" class="rounded-full bg-white px-4 py-2 text-sm font-medium text-ink md:hidden">Reserve</a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- Hero -->
+    <section class="ph relative flex min-h-[92vh] items-end">
+      <img src="images/CabinFrontGarden.jpeg" alt="Hummingbird Bunkhouse and gardens" class="absolute inset-0 h-full w-full object-cover" fetchpriority="high">
+      <div class="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent"></div>
+      <div class="relative mx-auto w-full max-w-6xl px-6 pb-16 md:pb-24">
+        <h1 class="max-w-2xl font-serif text-5xl font-normal leading-[1.05] text-white md:text-7xl">
+          A quiet house on the water, made for slow mornings.
+        </h1>
+        <p class="mt-6 max-w-lg text-lg text-white/85">
+          Four bedrooms, a screened porch, and a private dock. Sleeps eight.
+        </p>
+        <div class="mt-10 flex flex-wrap items-center gap-4">
+          <a href="#reserve" class="rounded-full bg-lake px-8 py-4 text-base font-semibold text-white shadow-lg transition hover:bg-lakedark">Reserve your stay</a>
+          <a href="#gallery" class="rounded-full border border-white/60 px-8 py-4 text-base font-medium text-white transition hover:bg-white/10">See photos</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="mx-auto max-w-6xl px-6 py-24">
+      <h2 class="font-serif text-4xl md:text-5xl">Take a look around</h2>
+      <p class="mt-3 text-ink/70">Tap any photo to enlarge it.</p>
+
+      <div class="mt-10 grid auto-rows-[180px] grid-cols-2 gap-3 md:auto-rows-[220px] md:grid-cols-4">
+        <button class="ph gallery-item col-span-2 row-span-2 overflow-hidden rounded-lg" data-src="images/living-room.jpg">
+          <img src="images/InsideLR.jpg" alt="Sunny living room area." class="h-full w-full object-cover transition duration-500 hover:scale-105" loading="lazy">
+        </button>
+        <button class="ph gallery-item overflow-hidden rounded-lg" data-src="images/kitchen.jpg">
+          <img src="images/KitchenStoveFarView.jpg" alt="Open kitchen" class="h-full w-full object-cover transition duration-500 hover:scale-105" loading="lazy">
+        </button>
+        <button class="ph gallery-item overflow-hidden rounded-lg" data-src="images/bedroom.jpg">
+          <img src="images/bedroom.jpg" alt="Primary bedroom" class="h-full w-full object-cover transition duration-500 hover:scale-105" loading="lazy">
+        </button>
+        <button class="ph gallery-item overflow-hidden rounded-lg" data-src="images/porch.jpg">
+          <img src="images/ScreenHouseEvening.jpeg" alt="Screened house" class="h-full w-full object-cover transition duration-500 hover:scale-105" loading="lazy">
+        </button>
+        <button class="ph gallery-item col-span-2 overflow-hidden rounded-lg" data-src="images/dock.jpg">
+          <img src="images/SaunaLakeView.jpeg" alt="Sauna with lake view" class="h-full w-full object-cover transition duration-500 hover:scale-105" loading="lazy">
+        </button>
+        <button class="ph gallery-item overflow-hidden rounded-lg" data-src="images/bathroom.jpg">
+          <img src="images/CabinHighLakeView.jpeg" alt="Cabin with lake Superior view." class="h-full w-full object-cover transition duration-500 hover:scale-105" loading="lazy">
+        </button>
+        <button class="ph gallery-item overflow-hidden rounded-lg" data-src="images/yard.jpg">
+          <img src="images/FallRiverWide.jpeg" alt="Fall River all along east border." class="h-full w-full object-cover transition duration-500 hover:scale-105" loading="lazy">
+        </button>
+      </div>
+    </section>
+
+    <!-- Description -->
+    <section id="about" class="border-y border-stone bg-white">
+      <div class="mx-auto grid max-w-6xl gap-12 px-6 py-24 md:grid-cols-5">
+        <div class="md:col-span-2">
+          <h2 class="font-serif text-4xl md:text-5xl">The house</h2>
+          <dl class="mt-10 grid grid-cols-2 gap-y-6 text-sm">
+            <div><dt class="text-ink/60">Guests</dt><dd class="mt-1 font-serif text-2xl">8</dd></div>
+            <div><dt class="text-ink/60">Bedrooms</dt><dd class="mt-1 font-serif text-2xl">4</dd></div>
+            <div><dt class="text-ink/60">Bathrooms</dt><dd class="mt-1 font-serif text-2xl">2.5</dd></div>
+            <div><dt class="text-ink/60">Beds</dt><dd class="mt-1 font-serif text-2xl">5</dd></div>
+          </dl>
+        </div>
+        <div class="space-y-5 font-serif text-xl leading-relaxed text-ink/85 md:col-span-3">
+          <p>
+            Wake up to light coming off the water. The Lake House sits on a wooded lot with its own dock,
+            a short walk from town, and far enough away that evenings are quiet.
+          </p>
+          <p>
+            Inside, the main floor is open and bright: a stone fireplace in the living room, a full kitchen
+            with room for everyone, and a long dining table that seats ten. Upstairs, four bedrooms
+            keep families and friends comfortably apart.
+          </p>
+          <p>
+            Outside, the screened porch is the best seat in the house. Bring a book, a coffee, and
+            nowhere to be.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Amenities -->
+    <section id="amenities" class="mx-auto max-w-6xl px-6 py-24">
+      <h2 class="font-serif text-4xl md:text-5xl">Amenities</h2>
+      <div class="mt-12 grid gap-x-12 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+        <div>
+          <h3 class="border-b border-stone pb-3 font-serif text-2xl">Outdoors</h3>
+          <ul class="mt-4 space-y-2 text-ink/80">
+            <li>Private dock</li>
+            <li>Kayaks and paddleboards</li>
+            <li>Fire pit with seating</li>
+            <li>Screened porch</li>
+            <li>Charcoal grill</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="border-b border-stone pb-3 font-serif text-2xl">Kitchen and dining</h3>
+          <ul class="mt-4 space-y-2 text-ink/80">
+            <li>Fully equipped kitchen</li>
+            <li>Coffee maker and espresso machine</li>
+            <li>Dishwasher</li>
+            <li>Dining table for ten</li>
+            <li>Basic pantry staples</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="border-b border-stone pb-3 font-serif text-2xl">Comfort</h3>
+          <ul class="mt-4 space-y-2 text-ink/80">
+            <li>Central heating and air conditioning</li>
+            <li>Wood-burning fireplace</li>
+            <li>Linens and towels provided</li>
+            <li>Washer and dryer</li>
+            <li>Blackout curtains</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="border-b border-stone pb-3 font-serif text-2xl">Connected</h3>
+          <ul class="mt-4 space-y-2 text-ink/80">
+            <li>Fast Wi-Fi</li>
+            <li>Dedicated workspace</li>
+            <li>Smart TV with streaming</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="border-b border-stone pb-3 font-serif text-2xl">Good to know</h3>
+          <ul class="mt-4 space-y-2 text-ink/80">
+            <li>Free parking for 3 cars</li>
+            <li>Well-behaved dogs welcome</li>
+            <li>Self check-in</li>
+            <li>No smoking</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reserve -->
+    <section id="reserve" class="bg-ink text-white">
+      <div class="mx-auto grid max-w-6xl gap-12 px-6 py-24 md:grid-cols-2">
+        <div>
+          <h2 class="font-serif text-4xl md:text-5xl">Reserve your stay</h2>
+          <p class="mt-6 max-w-md text-lg text-white/75">
+            Tell us your dates and how many are coming. Your email app will open with your request
+            filled in. Send it and we'll reply within a day to confirm availability and rates.
+          </p>
+        </div>
+
+        <div class="rounded-xl bg-white p-6 text-ink md:p-8">
+          <div class="grid gap-5 sm:grid-cols-2">
+            <div class="sm:col-span-2">
+              <label for="name" class="text-sm font-medium">Your name</label>
+              <input id="name" type="text" autocomplete="name" class="mt-1 w-full rounded-lg border border-stone bg-mist px-4 py-3">
+            </div>
+            <div>
+              <label for="checkin" class="text-sm font-medium">Check-in</label>
+              <input id="checkin" type="date" class="mt-1 w-full rounded-lg border border-stone bg-mist px-4 py-3">
+            </div>
+            <div>
+              <label for="checkout" class="text-sm font-medium">Check-out</label>
+              <input id="checkout" type="date" class="mt-1 w-full rounded-lg border border-stone bg-mist px-4 py-3">
+            </div>
+            <div class="sm:col-span-2">
+              <label for="guests" class="text-sm font-medium">Guests</label>
+              <select id="guests" class="mt-1 w-full rounded-lg border border-stone bg-mist px-4 py-3">
+                <option>1</option><option>2</option><option>3</option><option>4</option>
+                <option>5</option><option>6</option><option>7</option><option>8</option>
+              </select>
+            </div>
+            <div class="sm:col-span-2">
+              <label for="notes" class="text-sm font-medium">Anything else? (optional)</label>
+              <textarea id="notes" rows="3" class="mt-1 w-full rounded-lg border border-stone bg-mist px-4 py-3"></textarea>
+            </div>
+          </div>
+
+          <button id="reserveBtn" type="button" class="mt-6 w-full rounded-full bg-lake px-8 py-4 text-lg font-semibold text-white transition hover:bg-lakedark">
+            Send reservation request
+          </button>
+          <p id="reserveMsg" class="mt-3 hidden text-sm text-red-700" role="alert"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-ink pb-10 text-center text-sm text-white/50">
+    <p>&copy; <span id="year"></span> The Lake House</p>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/90 p-4" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button id="lightboxClose" class="absolute right-5 top-5 text-4xl leading-none text-white" aria-label="Close photo">&times;</button>
+    <img id="lightboxImg" src="" alt="" class="max-h-full max-w-full rounded-lg object-contain">
+  </div>
+
+  <script>
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Reservation request -> opens the visitor's email app
+    const OWNER_EMAIL = 'npvaldez@gmail.com';
+    const msg = document.getElementById('reserveMsg');
+
+    document.getElementById('reserveBtn').addEventListener('click', () => {
+      const name = document.getElementById('name').value.trim();
+      const checkin = document.getElementById('checkin').value;
+      const checkout = document.getElementById('checkout').value;
+      const guests = document.getElementById('guests').value;
+      const notes = document.getElementById('notes').value.trim();
+
+      if (!name || !checkin || !checkout) {
+        msg.textContent = 'Please enter your name, check-in date, and check-out date.';
+        msg.classList.remove('hidden');
+        return;
+      }
+      if (checkout <= checkin) {
+        msg.textContent = 'Check-out must be after check-in.';
+        msg.classList.remove('hidden');
+        return;
+      }
+      msg.classList.add('hidden');
+
+      const subject = `Reservation request: ${checkin} to ${checkout}`;
+      const body =
+        `Hi,\n\nI'd like to reserve The Lake House.\n\n` +
+        `Name: ${name}\nCheck-in: ${checkin}\nCheck-out: ${checkout}\nGuests: ${guests}\n` +
+        (notes ? `\nNotes: ${notes}\n` : '') +
+        `\nThank you!`;
+
+      window.location.href =
+        `mailto:${OWNER_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+
+    // Don't allow check-in dates in the past
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('checkin').min = today;
+    document.getElementById('checkout').min = today;
+
+    // Lightbox
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightboxImg');
+    const closeLb = () => { lb.classList.add('hidden'); lb.classList.remove('flex'); };
+
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const img = item.querySelector('img');
+        lbImg.src = item.dataset.src;
+        lbImg.alt = img.alt;
+        lb.classList.remove('hidden');
+        lb.classList.add('flex');
+      });
+    });
+    lb.addEventListener('click', e => { if (e.target !== lbImg) closeLb(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
+  </script>
+</body>
+</html>
